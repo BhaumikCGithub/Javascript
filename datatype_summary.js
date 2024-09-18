@@ -30,7 +30,7 @@ myFunction();
 
 // ++++++++++++++++++ Memory ++++++++++++++++++
 
-//Mmemory type : Stack(Primitive), Heap(Non-primitive)
+//Memory type : Stack(Primitive), Heap(Non-primitive)
 
 let name = "Bhaumik"
 
