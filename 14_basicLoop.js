@@ -22,7 +22,7 @@ for (let index = 0; index < heroes.length; index++) {
     console.log(element)
 }*/
 
-// breal and continue
+// break and continue
 /*for(let i = 1; i <= 20; i++) {
     if(i == 5)
     {

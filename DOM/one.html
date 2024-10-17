@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM Learning<span style="display:none;">Hidden</span></title>
+    <style>
+        .bg{
+            background-color: #212121;
+            color: aliceblue;
+        }
+    </style>
+</head>
+<body class="bg">
+    <div>
+        <h1 class="heading" id="title">DOCUMENT OBJECT MODAL</h1>
+        <h2>Mihir</h2>
+        <h2>Jeel</h2>
+        <h2>Harshit</h2>
+        <p>My Name is Bhaumik.</p>
+        <input type="passward" name="" id="" />
+
+        <ul>
+            <li class="list-item">Red</li>
+            <li class="list-item">Blue</li>
+            <li class="list-item">Green</li>
+        </ul>
+    </div>
+</body>
+</html>
+
+
+<!-- 
+document.getElementByID('title')
+=> <h1 class="heading" id="title">DOCUMENT OBJECT MODAL</h1>
+
+document.getElementByID('title').id
+=> 'title'
+
+document.getElementByID('title').class
+=> undefined
+
+document.getElementByID('title').className
+=> 'heading'
+
+document.getElementByID('title').getAttribute('id')
+=> 'title'
+
+document.getElementByID('title').getAttribute('class')
+=> 'heading'
+
+document.getElementByID('title').setAttribute('class', 'testClass')
+
+const title = document.getElementByID('title');
+title.style.backgroundColor = 'green'
+title.style.padding = '15px'
+title.style.borderRadius = '15px'
+
+----------------Interesting---------------------
+
+title.textContent 
+=> 'DOM Learning'
+
+title.innerHTML
+=> 'DOM Learning'
+
+title.innerText
+=> 'DOM Learning'
+
+difference between innerText & textContent & innerHTML
+
+title.innerText
+=> 'DOM Learning'
+
+title.textContent
+=> 'DOM Learning Hidden'
+
+title.innerHTML
+=> DOM Learning<span style="display:none;">Hidden</span>
+
+document.getElementByClassName('heading')
+
+document.querySelector('h1')   //give first h1 on webpage
+document.querySelector('#title')
+document.querySelector('.heading')
+document.querySelector('input[type="passward"]')
+document.querySelector('p:first-child')
+
+document.querySelector('h1')
+<h1 class=​"heading" id=​"title">​DOCUMENT OBJECT MODAL​</h1>​
+
+document.querySelector('h2')
+<h2>​Mihir​</h2>​
+
+document.querySelector('#title')
+<h1 class=​"heading" id=​"title">​DOCUMENT OBJECT MODAL​</h1>​
+
+document.querySelector('.heading')
+<h1 class=​"heading" id=​"title">​DOCUMENT OBJECT MODAL​</h1>​
+
+document.querySelector('input[type="passward"]')
+<input type="passward" name="" id="" />
+
+document.querySelector('ul')
+<ul>​<li>​…​</li>​<li>​…​</li>​<li>​…​</li>​</ul>​
+
+const myUl = document.querySelector('ul')
+undefined
+
+myUl.querySelector('li')
+<li>​…​</li>​::marker​"Red"</li>​
+
+const firstLi = myUl.querySelector('li')
+undefined
+
+firstLi.style.backgroundColor = 'green'
+firstLi.style.padding = '15px'
+firstLi.style.borderRadius = '15px'
+fistLi.innerText = 'Mohit'
+
+
+
+const tempList = document.querySelectorAll('li')
+undefined
+
+tempList.style.color = 'green'   // gives error
+
+tempList
+NodeList(3) [li.list-item, li.list-item, li.list-item]
+
+tempList.forEach( function (li) {
+    li.style.color = 'green'
+})
+
+document.getElementsByClassName('list-item')
+HTMLCollection(3) [li.list-item, li.list-item, li.list-item]
+
+const tempList = document.getElementsByClassName('list-item')
+undefined
+
+tempList.forEach( function (li) {
+    li.style.color = 'green'
+})
+Uncaught TypeError: tempList.forEach is not a function
+    
+Array.from(tempList)                            // convert in Array
+(3) [li.list-item, li.list-item, li.list-item]
+
+const listToArray = Array.from(tempList)
+undefined
+
+listToArray.forEach( function (li) {
+    li.style.color = 'blue'
+})
+->

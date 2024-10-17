@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM</title>
+</head>
+<body style="background-color: #212121; color: #FFFFFF;">
+    <ul class="language">
+        <li>Javascript</li>
+    </ul>
+</body>
+<script>
+    function addLanguage(name){
+        const li = document.createElement('li')
+        li.innerHTML = `${name}`             
+        document.querySelector('.language').appendChild(li)
+    }
+    //aa approach ma jyare pan navo child add karie tyare tree traverse thay etle large scale ma na chale
+    addLanguage('python')
+    addLanguage('typeScript')
+
+    //optimize way
+    function Optimize(name){
+        const li = document.createElement('li')
+        li.appendChild(document.createTextNode(name))
+        document.querySelector('.language').appendChild(li)
+    }
+    Optimize('golang')
+
+
+    //Edit
+    const secondLi = document.querySelector("li:nth-child(2)")
+    //secondLi.innerHTML = "Mojo"
+    const newLi = document.createElement('li')
+    newLi.textContent = "Mojo"
+    secondLi.replaceWith(newLi)
+
+    const firstLi = document.querySelector("li:first-child")
+    firstLi.outerHTML = '<li>C++</li>'
+
+    //Remove
+    const lastLi = document.querySelector("li:last-child")
+    lastLi.remove()
+</script>
+</html>
